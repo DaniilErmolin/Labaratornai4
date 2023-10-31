@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Виды отдыха";
+    @model List<TypesOfRecreation>;
+
+}
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Ограничения</th>
+        </tr>
+        @foreach (var typesOfRecration in Model)
+        {
+            <tr>
+                <td>
+                    @typesOfRecration.Id
+                </td>
+                <td>
+                    @typesOfRecration.Name
+                </td>
+                <td>
+                    @typesOfRecration.Description
+                </td>
+                <td>
+                    @typesOfRecration.Restrictions
+                </td>
+            </tr>
+        }
+    </table>
+</div>

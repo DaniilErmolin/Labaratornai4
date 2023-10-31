@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Путёвка";
+    @model List<Voucher>;
+
+}
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Дата начала</th>
+            <th>Дата окончания</th>
+            <th>Отель</th>
+            <th>Услуга</th>
+            <th>Допалнительная услуга</th>
+            <th>Клиент</th>
+            <th>Работник</th>
+            <th>Бронирование</th>
+            <th>Оплата</th>
+        </tr>
+        @foreach (var voucher in Model)
+        {
+            <tr>
+                <td>
+                    @voucher.Id
+                </td>
+                <td>
+                    @voucher.StartDate
+                </td>
+                <td>
+                    @voucher.ExpirationDate
+                </td>
+                <td>
+                    @voucher.Hotel.Name
+                </td>
+                <td>
+                    @voucher.TypeOfRecreation.Name
+                </td>
+                <td>
+                    @voucher.AdditionalService.Name
+                </td>
+                <td>
+                    @voucher.Client.Fio
+                </td>
+                <td>
+                    @voucher.Employess.Fio
+                </td>
+                <td>
+                    @voucher.Reservation
+                </td>
+                <td>
+                    @voucher.Payment
+                </td>
+            </tr>
+        }
+    </table>
+</div>
