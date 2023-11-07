@@ -1,4 +1,5 @@
 using lab4.Data;
+using lab4.Middleware;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,8 @@ internal class Program
                     Duration = 2 * 11 + 240
                 });
         });
+        builder.Services.AddSession();
+
 
         var app = builder.Build();
 
@@ -27,6 +30,10 @@ internal class Program
         }
 
         app.UseStaticFiles();
+
+        app.UseSession();
+
+        app.UseDbInitializer();
 
         app.UseRouting();
 

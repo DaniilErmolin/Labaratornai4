@@ -10,11 +10,8 @@
             <th>Id</th>
             <th>Дата начала</th>
             <th>Дата окончания</th>
-            <th>Отель</th>
             <th>Услуга</th>
-            <th>Допалнительная услуга</th>
             <th>Клиент</th>
-            <th>Работник</th>
             <th>Бронирование</th>
             <th>Оплата</th>
         </tr>
@@ -31,19 +28,10 @@
                     @voucher.ExpirationDate
                 </td>
                 <td>
-                    @voucher.Hotel.Name
-                </td>
-                <td>
                     @voucher.TypeOfRecreation.Name
                 </td>
                 <td>
-                    @voucher.AdditionalService.Name
-                </td>
-                <td>
                     @voucher.Client.Fio
-                </td>
-                <td>
-                    @voucher.Employess.Fio
                 </td>
                 <td>
                     @voucher.Reservation

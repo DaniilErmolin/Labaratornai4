@@ -17,10 +17,7 @@ namespace lab4.Controllers
         public IActionResult ShowTable()
         {
             var vouchers = db.Vouchers
-                .Include(ia => ia.AdditionalService)
                 .Include(ia => ia.Client)
-                .Include(ia => ia.Employess)
-                .Include(ia => ia.Hotel)
                 .Include(ia => ia.TypeOfRecreation)
                 .ToList();
             return View(vouchers);
